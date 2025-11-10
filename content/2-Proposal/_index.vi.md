@@ -43,7 +43,7 @@ Giải pháp được đề xuất là một kiến trúc cloud native trên AWS
 3. Tầng dữ liệu (Data Layer):
    - Database trong private subnet
    - ElastiCache (Redis) cho caching
-   - Encrypted storage cho sensitive data  
+   - Encrypted storage cho sensitive data
 
 ### Sơ đồ kiến trúc
 
