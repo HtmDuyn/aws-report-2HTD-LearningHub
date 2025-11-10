@@ -45,79 +45,147 @@ Giải pháp được đề xuất là một kiến trúc cloud native trên AWS
    - ElastiCache (Redis) cho caching
    - Encrypted storage cho sensitive data  
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+### Sơ đồ kiến trúc
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+![AWS Architecture](/images/architecture.png)
 
-*Dịch vụ AWS sử dụng*  
-- *AWS IoT Core*: Tiếp nhận dữ liệu MQTT từ 5 trạm, mở rộng lên 15.  
-- *AWS Lambda*: Xử lý dữ liệu và kích hoạt Glue jobs (2 hàm).  
-- *Amazon API Gateway*: Giao tiếp với ứng dụng web.  
-- *Amazon S3*: Lưu trữ dữ liệu thô (data lake) và dữ liệu đã xử lý (2 bucket).  
-- *AWS Glue*: Crawlers lập chỉ mục dữ liệu, ETL jobs chuyển đổi và tải dữ liệu.  
-- *AWS Amplify*: Lưu trữ giao diện web Next.js.  
-- *Amazon Cognito*: Quản lý quyền truy cập cho người dùng phòng lab.  
+### AWS Services Used
 
-*Thiết kế thành phần*  
-- *Thiết bị biên*: Raspberry Pi thu thập và lọc dữ liệu cảm biến, gửi tới IoT Core.  
-- *Tiếp nhận dữ liệu*: AWS IoT Core nhận tin nhắn MQTT từ thiết bị biên.  
-- *Lưu trữ dữ liệu*: Dữ liệu thô lưu trong S3 data lake; dữ liệu đã xử lý lưu ở một S3 bucket khác.  
-- *Xử lý dữ liệu*: AWS Glue Crawlers lập chỉ mục dữ liệu; ETL jobs chuyển đổi để phân tích.  
-- *Giao diện web*: AWS Amplify lưu trữ ứng dụng Next.js cho bảng điều khiển và phân tích thời gian thực.  
-- *Quản lý người dùng*: Amazon Cognito giới hạn 5 tài khoản hoạt động.  
+- **Amazon Route 53**: DNS và domain management
+- **Amazon CloudFront**: CDN để phân phối nội dung tĩnh toàn cầu
+- **Amazon S3**: Object storage cho static content
+- **Amazon VPC**: Network isolation với public/private subnets
+- **Application Load Balancer**: Load balancing cho web traffic
+- **Amazon EC2**: Compute instances cho application servers
+- **Auto Scaling Group**: Tự động điều chỉnh capacity
+- **Amazon ElastiCache**: In-memory caching với Redis
+- **AWS Certificate Manager**: SSL/TLS certificate management
+- **Amazon Cognito**: User authentication và authorization
+- **Amazon CloudWatch**: Monitoring và alerting
+- **Amazon SNS**: Notification service
+- **Amazon EventBridge**: Event routing
+- **NAT Gateway**: Outbound internet access cho private resources
 
-### 4. Triển khai kỹ thuật  
-*Các giai đoạn triển khai*  
-Dự án gồm 2 phần — thiết lập trạm thời tiết biên và xây dựng nền tảng thời tiết — mỗi phần trải qua 4 giai đoạn:  
-1. *Nghiên cứu và vẽ kiến trúc*: Nghiên cứu Raspberry Pi với cảm biến ESP32 và thiết kế kiến trúc AWS Serverless (1 tháng trước kỳ thực tập).  
-2. *Tính toán chi phí và kiểm tra tính khả thi*: Sử dụng AWS Pricing Calculator để ước tính và điều chỉnh (Tháng 1).  
-3. *Điều chỉnh kiến trúc để tối ưu chi phí/giải pháp*: Tinh chỉnh (ví dụ tối ưu Lambda với Next.js) để đảm bảo hiệu quả (Tháng 2).  
-4. *Phát triển, kiểm thử, triển khai*: Lập trình Raspberry Pi, AWS services với CDK/SDK và ứng dụng Next.js, sau đó kiểm thử và đưa vào vận hành (Tháng 2–3).  
+### Component Design
 
-*Yêu cầu kỹ thuật*  
-- *Trạm thời tiết biên*: Cảm biến (nhiệt độ, độ ẩm, lượng mưa, tốc độ gió), vi điều khiển ESP32, Raspberry Pi làm thiết bị biên. Raspberry Pi chạy Raspbian, sử dụng Docker để lọc dữ liệu và gửi 1 MB/ngày/trạm qua MQTT qua Wi-Fi.  
-- *Nền tảng thời tiết*: Kiến thức thực tế về AWS Amplify (lưu trữ Next.js), Lambda (giảm thiểu do Next.js xử lý), AWS Glue (ETL), S3 (2 bucket), IoT Core (gateway và rules), và Cognito (5 người dùng). Sử dụng AWS CDK/SDK để lập trình (ví dụ IoT Core rules tới S3). Next.js giúp giảm tải Lambda cho ứng dụng web fullstack.  
+1. **Edge Layer**:
+   - CloudFront distribution với S3 origin
+   - Route 53 record sets cho DNS resolution
+   - SSL certificates từ ACM
 
-### 5. Lộ trình & Mốc triển khai  
-- *Trước thực tập (Tháng 0)*: 1 tháng lên kế hoạch và đánh giá trạm cũ.  
-- *Thực tập (Tháng 1–3)*:  
-    - Tháng 1: Học AWS và nâng cấp phần cứng.  
-    - Tháng 2: Thiết kế và điều chỉnh kiến trúc.  
-    - Tháng 3: Triển khai, kiểm thử, đưa vào sử dụng.  
-- *Sau triển khai*: Nghiên cứu thêm trong vòng 1 năm.  
+2. **Security Components**:
+   - Security Groups cho instance-level firewall
+   - NACLs cho subnet-level security
+   - IAM roles và policies
+   - VPC Flow Logs
 
-### 6. Ước tính ngân sách  
-Có thể xem chi phí trên [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01)  
-Hoặc tải [tệp ước tính ngân sách](../attachments/budget_estimation.pdf).  
+3. **Application Components**:
+   - Multi-AZ deployment cho high availability
+   - Auto Scaling policies dựa trên metrics
+   - Health checks và recovery procedures
 
-*Chi phí hạ tầng*  
-- AWS Lambda: 0,00 USD/tháng (1.000 request, 512 MB lưu trữ).  
-- S3 Standard: 0,15 USD/tháng (6 GB, 2.100 request, 1 GB quét).  
-- Truyền dữ liệu: 0,02 USD/tháng (1 GB vào, 1 GB ra).  
-- AWS Amplify: 0,35 USD/tháng (256 MB, request 500 ms).  
-- Amazon API Gateway: 0,01 USD/tháng (2.000 request).  
-- AWS Glue ETL Jobs: 0,02 USD/tháng (2 DPU).  
-- AWS Glue Crawlers: 0,07 USD/tháng (1 crawler).  
-- MQTT (IoT Core): 0,08 USD/tháng (5 thiết bị, 45.000 tin nhắn).  
+4. **Data Layer**:
+   - Multi-AZ database setup
+   - Encrypted storage cho sensitive data
+   - Backup và retention policies
 
-*Tổng*: 0,7 USD/tháng, 8,40 USD/12 tháng  
-- *Phần cứng*: 265 USD một lần (Raspberry Pi 5 và cảm biến).  
+## 4. Technical Implementation
 
-### 7. Đánh giá rủi ro  
-*Ma trận rủi ro*  
-- Mất mạng: Ảnh hưởng trung bình, xác suất trung bình.  
-- Hỏng cảm biến: Ảnh hưởng cao, xác suất thấp.  
-- Vượt ngân sách: Ảnh hưởng trung bình, xác suất thấp.  
+### Phase 1: Infrastructure Setup (2 tuần)
+- VPC creation với CIDR planning
+- Subnet configuration (public/private)
+- Internet Gateway và NAT Gateway setup
+- Route tables và security groups
 
-*Chiến lược giảm thiểu*  
-- Mạng: Lưu trữ cục bộ trên Raspberry Pi với Docker.  
-- Cảm biến: Kiểm tra định kỳ, dự phòng linh kiện.  
-- Chi phí: Cảnh báo ngân sách AWS, tối ưu dịch vụ.  
+### Phase 2: Application Layer (3 tuần)
+- EC2 launch templates
+- Auto Scaling configuration
+- Load Balancer setup
+- CloudFront distribution
 
-*Kế hoạch dự phòng*  
-- Quay lại thu thập thủ công nếu AWS gặp sự cố.  
-- Sử dụng CloudFormation để khôi phục cấu hình liên quan đến chi phí.  
+### Phase 3: Database & Cache (2 tuần)
+- Database instance setup
+- ElastiCache cluster configuration
+- Backup procedures
+- Data migration plan
 
-### 8. Kết quả kỳ vọng  
-*Cải tiến kỹ thuật*: Dữ liệu và phân tích thời gian thực thay thế quy trình thủ công. Có thể mở rộng tới 10–15 trạm.  
-*Giá trị dài hạn*: Nền tảng dữ liệu 1 năm cho nghiên cứu AI, có thể tái sử dụng cho các dự án tương lai.
+### Phase 4: Security & Monitoring (2 tuần)
+- IAM roles và policies
+- SSL certificate setup
+- CloudWatch dashboards
+- Alerting configuration
+
+## 5. Timeline & Milestones
+
+**Tháng 1:**
+- Tuần 1-2: VPC và network setup
+- Tuần 3-4: EC2 và Auto Scaling configuration
+
+**Tháng 2:**
+- Tuần 1-2: Database và cache layer
+- Tuần 3-4: Security và monitoring
+
+**Tháng 3:**
+- Tuần 1-2: Testing và optimization
+- Tuần 3-4: Documentation và training
+
+## 6. Budget Estimation
+
+### Monthly Infrastructure Costs
+- EC2 Instances: $200-300
+- RDS: $150-200
+- ElastiCache: $100-150
+- CloudFront: $50-100
+- S3 Storage: $20-50
+- NAT Gateway: $30-50
+- Other Services: $50-100
+
+**Tổng ước tính hàng tháng: $600-950**
+
+### Setup Costs
+- Professional Services: $5,000-8,000
+- Training: $2,000-3,000
+- Third-party tools: $1,000-2,000
+
+## 7. Risk Assessment
+
+### Technical Risks
+- Database migration complexity
+- Application performance issues
+- Security vulnerabilities
+
+### Mitigation Strategies
+- Detailed testing plan
+- Phased rollout
+- Regular security audits
+- Backup và DR procedures
+
+### Business Risks
+- Cost overruns
+- Timeline delays
+- Resource availability
+
+### Contingency Plans
+- Budget buffer 20%
+- Flexible resource allocation
+- Clear escalation paths
+
+## 8. Expected Outcomes
+
+### Performance Metrics
+- Response time < 200ms
+- 99.9% availability
+- Zero data loss
+- Auto-scaling response < 3 minutes
+
+### Business Benefits
+- 30% cost reduction
+- Improved user experience
+- Enhanced security posture
+- Better scalability
+
+### Long-term Value
+- Reduced operational overhead
+- Improved disaster recovery
+- Better compliance posture
+- Flexibility for future growth
