@@ -7,15 +7,15 @@ chapter: false
 # Báo cáo thực tập
 
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Nguyễn Trí Dũng
+&emsp; **Họ và tên:** Hoàng Trần Mỹ Duyên
 
-&emsp; **Số điện thoại:** 032 986 2337
+&emsp; **Số điện thoại:** 0962866302
 
-&emsp; **Email:** nt.dung1297@gmail.com
+&emsp; **Email:** duyenhtmse180688
 
 &emsp; **Trường:** Đại học FPT TP.Hồ Chí Minh
 
-&emsp; **Ngành:** Trí tuệ nhân tạo
+&emsp; **Ngành:** Hệ thống thông tin
 
 &emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Vietnam
 
@@ -23,9 +23,9 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 08/09/2025 đến ngày 00/12/2025
 
-![Ảnh đại diện của bạn](/images/avatar.png)
-
-
+<div style="text-align: center; margin: 20px 0;">
+  <img src="/images/avatar.png" alt="Ảnh đại diện - Hoàng Trần Mỹ Duyên" style="width:500px; height: auto; border: 1px solid #ddd;" />
+</div>
 
 ### Nội dung báo cáo
 

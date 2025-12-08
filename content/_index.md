@@ -23,7 +23,10 @@ chapter: false
 
 &emsp; **Internship Duration:** From 08/09/2025 to 00/12/2025
 
-![Your profile picture](/images/avatar.png)
+<div style="text-align: center; margin: 20px 0;">
+  <img src="/images/avatar.png" alt="Ảnh đại diện - Hoàng Trần Mỹ Duyên" style="width:500px; height: auto; border: 1px solid #ddd;" />
+</div>
+
 
 ### Report Content
 
