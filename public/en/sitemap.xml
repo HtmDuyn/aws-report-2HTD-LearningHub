@@ -206,16 +206,16 @@
                 href="http://localhost:1313/aws-report-2HTD-LearningHub/en/1-worklog/"
                 />
   </url><url>
-    <loc>http://localhost:1313/aws-report-2HTD-LearningHub/en/5-workshop/5.2-prerequiste/</loc>
+    <loc>http://localhost:1313/aws-report-2HTD-LearningHub/en/5-workshop/5.3-cognito-api-gateway/5.3.1-create-andconfigue-cognito/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/aws-report-2HTD-LearningHub/vi/5-workshop/5.2-prerequiste/"
+                href="http://localhost:1313/aws-report-2HTD-LearningHub/vi/5-workshop/5.3-cognito-api-gateway/5.3.1-create-andconfigue-cognito/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/aws-report-2HTD-LearningHub/en/5-workshop/5.2-prerequiste/"
+                href="http://localhost:1313/aws-report-2HTD-LearningHub/en/5-workshop/5.3-cognito-api-gateway/5.3.1-create-andconfigue-cognito/"
                 />
   </url><url>
     <loc>http://localhost:1313/aws-report-2HTD-LearningHub/en/2-proposal/</loc>
@@ -372,6 +372,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/aws-report-2HTD-LearningHub/en/7-feedback/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/aws-report-2HTD-LearningHub/en/5-workshop/5.2-prerequiste/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/aws-report-2HTD-LearningHub/vi/5-workshop/5.2-prerequiste/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/aws-report-2HTD-LearningHub/en/5-workshop/5.2-prerequiste/"
                 />
   </url><url>
     <loc>http://localhost:1313/aws-report-2HTD-LearningHub/en/categories/</loc>

@@ -12,7 +12,7 @@
 
     <link rel="icon" href="http://localhost:1313/aws-report-2HTD-LearningHub/images/favicon.png" type="image/png">
 
-    <title>Week 4 Worklog :: Internship Report</title>
+    <title>Create and configure Cognito &amp; API Gateway :: Internship Report</title>
 
     
     <link href="http://localhost:1313/aws-report-2HTD-LearningHub/css/nucleus.css?1765269718" rel="stylesheet">
@@ -40,7 +40,7 @@
     
 
   </head>
-  <body class="" data-url="http://localhost:1313/aws-report-2HTD-LearningHub/en/1-worklog/1.4-week4/">
+  <body class="" data-url="http://localhost:1313/aws-report-2HTD-LearningHub/en/5-workshop/5.3-cognito-api-gateway/5.3.1-create-andconfigue-cognito/">
     <nav
   id="sidebar"
   class="showVisitedLinks"
@@ -106,7 +106,7 @@
   data-nav-id="/en/1-worklog/"
   title="Worklog"
   class="dd-item 
-        parent
+        
         
         
         "
@@ -179,7 +179,7 @@
   title="Week 4 Worklog"
   class="dd-item 
         
-        active
+        
         
         "
 >
@@ -492,7 +492,7 @@
   data-nav-id="/en/5-workshop/"
   title="Workshop"
   class="dd-item 
-        
+        parent
         
         
         "
@@ -528,7 +528,7 @@
   data-nav-id="/en/5-workshop/5.3-cognito-api-gateway/"
   title="Cognito &#43; API Gateway"
   class="dd-item 
-        
+        parent
         
         
         "
@@ -547,7 +547,7 @@
   title="Create and configure Cognito &amp; API Gateway"
   class="dd-item 
         
-        
+        active
         
         "
 >
@@ -703,7 +703,7 @@
                        
                 <option
                   id="en"
-                  value="http://localhost:1313/aws-report-2HTD-LearningHub/en/1-worklog/1.4-week4/"
+                  value="http://localhost:1313/aws-report-2HTD-LearningHub/en/5-workshop/5.3-cognito-api-gateway/5.3.1-create-andconfigue-cognito/"
                   selected
                 >
                   English
@@ -711,7 +711,7 @@
                             
                 <option
                   id="vi"
-                  value="http://localhost:1313/aws-report-2HTD-LearningHub/vi/1-worklog/1.4-week4/"
+                  value="http://localhost:1313/aws-report-2HTD-LearningHub/vi/5-workshop/5.3-cognito-api-gateway/5.3.1-create-andconfigue-cognito/"
                 >
                   Tiếng Việt
                 </option>
@@ -824,7 +824,13 @@
             
           
           
-            <a href='http://localhost:1313/aws-report-2HTD-LearningHub/en/'>Internship Report</a> > <a href='http://localhost:1313/aws-report-2HTD-LearningHub/en/1-worklog/'>Worklog</a> > Week 4 Worklog
+            
+            
+          
+          
+            <a href='http://localhost:1313/aws-report-2HTD-LearningHub/en/'>Internship Report</a> > <a href='http://localhost:1313/aws-report-2HTD-LearningHub/en/5-workshop/'>Workshop</a> > <a href='http://localhost:1313/aws-report-2HTD-LearningHub/en/5-workshop/5.3-cognito-api-gateway/'>Cognito + API Gateway</a> > Create and configure Cognito & API Gateway
+          
+        
           
         
           
@@ -838,13 +844,23 @@
                     <div class="progress">
   <div class="wrapper"><nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#purpose">Purpose</a></li>
+    <li><a href="#1-create-a-cognito-user-pool-console">1. Create a Cognito User Pool (Console)</a></li>
+    <li><a href="#2-create-an-app-client-console--cli">2. Create an App Client (Console + CLI)</a></li>
+    <li><a href="#3-optional-configure-a-hosted-ui--domain">3. (Optional) Configure a Hosted UI / Domain</a></li>
+    <li><a href="#4-create-a-cognito-identity-pool-optional">4. Create a Cognito Identity Pool (optional)</a></li>
+    <li><a href="#5-create-iam-roles-for-cognito-identity-pool-and-lambda">5. Create IAM roles for Cognito (Identity Pool) and Lambda</a></li>
+    <li><a href="#6-create-api-gateway-http-api-and-configure-cognito-authorizer">6. Create API Gateway (HTTP API) and configure Cognito Authorizer</a>
       <ul>
-        <li><a href="#week-4-objectives">Week 4 Objectives:</a></li>
-        <li><a href="#tasks-to-be-carried-out-this-week">Tasks to be carried out this week:</a></li>
-        <li><a href="#week-4-achievements">Week 4 Achievements:</a></li>
+        <li><a href="#console-steps">Console steps</a></li>
+        <li><a href="#cli-example-create-authorizer">CLI example (create authorizer)</a></li>
       </ul>
     </li>
+    <li><a href="#7-api-gateway---lambda-permissions">7. API Gateway -&gt; Lambda permissions</a></li>
+    <li><a href="#8-cors">8. CORS</a></li>
+    <li><a href="#9-test-flow-sign-up-sign-in-call-api">9. Test flow (Sign-up, Sign-in, call API)</a></li>
+    <li><a href="#10-troubleshooting-tips">10. Troubleshooting tips</a></li>
+    <li><a href="#11-security-considerations">11. Security considerations</a></li>
   </ul>
 </nav></div>
 </div>
@@ -861,7 +877,7 @@
           
             <h1>
               
-              Week 4 Worklog
+              Create and configure Cognito &amp; API Gateway
             </h1>
           
 
@@ -869,114 +885,160 @@
 
 
 
-	
-<div
-  class="notices warning"
-  
->
-  <p>⚠️ <strong>Note:</strong> The following information is for reference purposes only. Please <strong>do not copy verbatim</strong> for your own report, including this warning.</p>
-
-</div>
-
-<h3 id="week-4-objectives">Week 4 Objectives:</h3>
+	<h2 id="purpose">Purpose</h2>
+<p>This guide shows step-by-step how to create and configure Amazon Cognito (User Pool + App Client, optional Identity Pool) and an Amazon API Gateway HTTP API that uses Cognito as a JWT authorizer. It includes console steps, AWS CLI/PowerShell commands, IAM notes and examples for testing.</p>
+<blockquote>
+<p>Architecture assumption: frontend (Vercel) calls API Gateway (HTTP API) -&gt; Gateway authorizer validates Cognito JWTs -&gt; routes to Lambda (business logic). SQL Server runs on EC2 in a private subnet and is accessed by Lambda when needed.</p></blockquote>
+<hr>
+<h2 id="1-create-a-cognito-user-pool-console">1. Create a Cognito User Pool (Console)</h2>
+<ol>
+<li>Sign in to AWS Console -&gt; Amazon Cognito -&gt; &ldquo;Manage User Pools&rdquo; -&gt; &ldquo;Create a user pool&rdquo;.</li>
+<li>Choose a name, e.g. <code>learninghub-userpool</code>.</li>
+<li>Choose <strong>Review defaults</strong> or <strong>Step through settings</strong> for custom options. Recommended custom settings:
 <ul>
-<li>Connect and get acquainted with members of First Cloud Journey.</li>
-<li>Understand basic AWS services, how to use the console &amp; CLI.</li>
-</ul>
-<h3 id="tasks-to-be-carried-out-this-week">Tasks to be carried out this week:</h3>
-<table>
-  <thead>
-      <tr>
-          <th>Day</th>
-          <th>Task</th>
-          <th>Start Date</th>
-          <th>Completion Date</th>
-          <th>Reference Material</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>2</td>
-          <td>- Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations</td>
-          <td>08/11/2025</td>
-          <td>08/11/2025</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>3</td>
-          <td>- Learn about AWS and its types of services <br>  + Compute <br>  + Storage <br>  + Networking <br>  + Database <br>  + &hellip; <br></td>
-          <td>08/12/2025</td>
-          <td>08/12/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
-      </tr>
-      <tr>
-          <td>4</td>
-          <td>- Create AWS Free Tier account <br> - Learn about AWS Console &amp; AWS CLI <br> - <strong>Practice:</strong> <br>  + Create AWS account <br>  + Install &amp; configure AWS CLI <br>   + How to use AWS CLI</td>
-          <td>08/13/2025</td>
-          <td>08/13/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
-      </tr>
-      <tr>
-          <td>5</td>
-          <td>- Learn basic EC2: <br>  + Instance types <br>  + AMI <br>  + EBS <br>  + &hellip; <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br></td>
-          <td>08/14/2025</td>
-          <td>08/15/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
-      </tr>
-      <tr>
-          <td>6</td>
-          <td>- <strong>Practice:</strong> <br>  + Launch an EC2 instance <br>  + Connect via SSH <br>  + Attach an EBS volume</td>
-          <td>08/15/2025</td>
-          <td>08/15/2025</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com/">https://cloudjourney.awsstudygroup.com/</a></td>
-      </tr>
-  </tbody>
-</table>
-<h3 id="week-4-achievements">Week 4 Achievements:</h3>
-<ul>
-<li>
-<p>Understood what AWS is and mastered the basic service groups:</p>
-<ul>
-<li>Compute</li>
-<li>Storage</li>
-<li>Networking</li>
-<li>Database</li>
-<li>&hellip;</li>
+<li>Attributes: keep <code>email</code> as required; add <code>name</code> if you need display names.</li>
+<li>Policies: password strength as required for your environment.</li>
+<li>MFA &amp; verifications: Email verification enabled for workshop demos (optional).</li>
+<li>App clients: create at least one App client with <em>no secret</em> if used by SPA or mobile (uncheck &ldquo;Generate client secret&rdquo;).</li>
+<li>App client callback URLs: add your frontend URL(s) (e.g., <code>https://learninghub.example.com</code>) for Hosted UI flows.</li>
 </ul>
 </li>
-<li>
-<p>Successfully created and configured an AWS Free Tier account.</p>
-</li>
-<li>
-<p>Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.</p>
-</li>
-<li>
-<p>Installed and configured AWS CLI on the computer, including:</p>
+<li>Save pool.</li>
+</ol>
+<p>Notes:</p>
 <ul>
-<li>Access Key</li>
-<li>Secret Key</li>
-<li>Default Region</li>
-<li>&hellip;</li>
+<li>For SPAs use an App client without a secret. For backend-to-backend you may use a client secret.</li>
+<li>Hosted UI: you can configure a domain under &ldquo;App integration -&gt; Domain name&rdquo; to use Cognito&rsquo;s Hosted UI.</li>
 </ul>
-</li>
-<li>
-<p>Used AWS CLI to perform basic operations such as:</p>
+<hr>
+<h2 id="2-create-an-app-client-console--cli">2. Create an App Client (Console + CLI)</h2>
 <ul>
-<li>Check account &amp; configuration information</li>
-<li>Retrieve the list of regions</li>
-<li>View EC2 service</li>
-<li>Create and manage key pairs</li>
-<li>Check information about running services</li>
-<li>&hellip;</li>
-</ul>
+<li>
+<p>Console: In User Pool -&gt; App clients -&gt; &ldquo;Add an app client&rdquo;. Name it like <code>learninghub-web-client</code>. Uncheck &ldquo;Generate client secret&rdquo; for browser-based apps.</p>
 </li>
 <li>
-<p>Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.</p>
-</li>
-<li>
-<p>&hellip;</p>
+<p>AWS CLI (PowerShell):</p>
 </li>
 </ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># create app client (no secret)</span>
+</span></span><span style="display:flex;"><span>aws cognito-idp create-user-pool-client --user-pool-id &lt;USER_POOL_ID&gt; --client-name learninghub-web-client --no-generate-secret --output json
+</span></span></code></pre></div><p>Record the <code>ClientId</code> and <code>UserPoolId</code> for later.</p>
+<hr>
+<h2 id="3-optional-configure-a-hosted-ui--domain">3. (Optional) Configure a Hosted UI / Domain</h2>
+<ol>
+<li>In User Pool -&gt; App integration -&gt; Domain name, create a Cognito domain (e.g. <code>learninghub-demo-&lt;suffix&gt;</code>).</li>
+<li>Configure callback and sign-out URLs under App client settings.</li>
+<li>Enable OAuth flows needed (Authorization code grant or Implicit). For SPAs you may use implicit (but Authorization code grant + PKCE is recommended).</li>
+</ol>
+<hr>
+<h2 id="4-create-a-cognito-identity-pool-optional">4. Create a Cognito Identity Pool (optional)</h2>
+<p>Use an identity pool when you need AWS temporary credentials (e.g., direct S3 access from client). Steps:</p>
+<ul>
+<li>Console: Cognito -&gt; Federated Identities -&gt; Create identity pool -&gt; enable &ldquo;Authenticated identities&rdquo; -&gt; choose roles for authenticated/unauthenticated.</li>
+</ul>
+<p>CLI example (PowerShell):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>aws cognito-identity create-identity-pool --identity-pool-name learninghub-identitypool --allow-unauthenticated-identities false --cognito-identity-providers ProviderName=cognito-idp.&lt;region&gt;.amazonaws.com/&lt;USER_POOL_ID&gt;,ClientId=&lt;CLIENT_ID&gt;
+</span></span></code></pre></div><p>You&rsquo;ll receive an IdentityPoolId; configure IAM roles and trust policies to allow the pool to assume roles.</p>
+<hr>
+<h2 id="5-create-iam-roles-for-cognito-identity-pool-and-lambda">5. Create IAM roles for Cognito (Identity Pool) and Lambda</h2>
+<ul>
+<li>
+<p>If you use Identity Pool, create two roles: <code>CognitoAuthRole</code> (for authenticated users) and <code>CognitoUnauthRole</code> (for unauthenticated, if enabled). Attach minimal policies (S3 GetObject/PutObject if you use direct S3 uploads).</p>
+</li>
+<li>
+<p>Lambda execution role: create an IAM role that allows Lambda to access S3, Secrets Manager, EC2 (via SSM) or other services required by your backend.</p>
+</li>
+</ul>
+<p>Example trust policy for a role assumed by Cognito identity pool (snippet):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Principal&#34;</span>: {<span style="color:#f92672">&#34;Federated&#34;</span>: <span style="color:#e6db74">&#34;cognito-identity.amazonaws.com&#34;</span>},
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;sts:AssumeRoleWithWebIdentity&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Condition&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;StringEquals&#34;</span>: {<span style="color:#f92672">&#34;cognito-identity.amazonaws.com:aud&#34;</span>: <span style="color:#e6db74">&#34;&lt;IDENTITY_POOL_ID&gt;&#34;</span>},
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;ForAnyValue:StringLike&#34;</span>: {<span style="color:#f92672">&#34;cognito-identity.amazonaws.com:amr&#34;</span>: <span style="color:#e6db74">&#34;authenticated&#34;</span>}
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h2 id="6-create-api-gateway-http-api-and-configure-cognito-authorizer">6. Create API Gateway (HTTP API) and configure Cognito Authorizer</h2>
+<p>We use HTTP API (faster, lower-cost). Configure a JWT authorizer that validates Cognito tokens.</p>
+<h3 id="console-steps">Console steps</h3>
+<ol>
+<li>API Gateway -&gt; HTTP APIs -&gt; Create -&gt; Build.</li>
+<li>Select &ldquo;Add integration&rdquo; -&gt; Lambda -&gt; choose your Lambda function (or create placeholder).</li>
+<li>Create routes (e.g., <code>GET /courses</code>, <code>POST /exams</code>). Attach integration.</li>
+<li>Under &ldquo;Authorization&rdquo; -&gt; Add authorizer -&gt; choose JWT. Fill these fields:
+<ul>
+<li><strong>Identity provider</strong>: choose Cognito.</li>
+<li><strong>Issuer</strong>: <code>https://cognito-idp.&lt;region&gt;.amazonaws.com/&lt;USER_POOL_ID&gt;</code></li>
+<li><strong>Audience</strong>: your App Client ID (client_id) — for ID tokens use <code>client_id</code> as audience. Some setups use the user pool&rsquo;s <code>aud</code> claim.</li>
+</ul>
+</li>
+<li>Attach the JWT authorizer to routes that require authentication.</li>
+<li>Deploy (Auto-deploy for HTTP API is default). Note the invoke URL (e.g., <code>https://&lt;api-id&gt;.execute-api.&lt;region&gt;.amazonaws.com</code>).</li>
+</ol>
+<h3 id="cli-example-create-authorizer">CLI example (create authorizer)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># create an HTTP API</span>
+</span></span><span style="display:flex;"><span>$api=$(aws apigatewayv2 create-api --name learninghub-api --protocol-type HTTP --target arn<span style="color:#960050;background-color:#1e0010">:</span>aws<span style="color:#960050;background-color:#1e0010">:</span>lambda<span style="color:#960050;background-color:#1e0010">:</span>&lt;region&gt;<span style="color:#960050;background-color:#1e0010">:</span>&lt;account-id&gt;<span style="color:#960050;background-color:#1e0010">:</span>function<span style="color:#960050;background-color:#1e0010">:</span>YourFunction --output json)
+</span></span><span style="display:flex;"><span>$apiId=$(echo $api | ConvertFrom-Json).ApiId
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># create JWT authorizer</span>
+</span></span><span style="display:flex;"><span>aws apigatewayv2 create-authorizer --api-id $apiId --authorizer-type JWT --name CognitoJWTAuth --identity-source <span style="color:#e6db74">&#34;</span>$request<span style="color:#e6db74">.header.Authorization&#34;</span> --jwt-configuration <span style="color:#e6db74">&#34;{\&#34;</span>Issuer\<span style="color:#e6db74">&#34;:\&#34;</span>https<span style="color:#960050;background-color:#1e0010">:</span>//cognito-idp.&lt;region&gt;.amazonaws.com/&lt;USER_POOL_ID&gt;\<span style="color:#e6db74">&#34;,\&#34;</span>Audience\<span style="color:#e6db74">&#34;:[\&#34;</span>&lt;CLIENT_ID&gt;\<span style="color:#e6db74">&#34;]}&#34;</span>
+</span></span></code></pre></div><p>Attach the authorizer to a route (replace routeId as necessary):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>aws apigatewayv2 update-route --api-id $apiId --route-key <span style="color:#e6db74">&#34;GET /courses&#34;</span> --authorization-type JWT --authorizer-id &lt;AUTHORZER_ID&gt;
+</span></span></code></pre></div><p>Notes:</p>
+<ul>
+<li>HTTP API expects JWT <code>Authorization</code> header: <code>Authorization: Bearer &lt;id_token&gt;</code>.</li>
+<li>Use <code>id_token</code> for user info (claims). Access tokens may also be acceptable depending on configuration.</li>
+</ul>
+<hr>
+<h2 id="7-api-gateway---lambda-permissions">7. API Gateway -&gt; Lambda permissions</h2>
+<p>Add permission for API Gateway to invoke the Lambda:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>aws lambda add-permission --function-name YourFunction --statement-id apigw-invoke --action lambda<span style="color:#960050;background-color:#1e0010">:</span>InvokeFunction --principal apigateway.amazonaws.com --source-arn arn<span style="color:#960050;background-color:#1e0010">:</span>aws<span style="color:#960050;background-color:#1e0010">:</span>execute-api<span style="color:#960050;background-color:#1e0010">:</span>&lt;region&gt;<span style="color:#960050;background-color:#1e0010">:</span>&lt;account-id&gt;<span style="color:#960050;background-color:#1e0010">:</span>${apiId}/*/*/*
+</span></span></code></pre></div><hr>
+<h2 id="8-cors">8. CORS</h2>
+<p>If your frontend is hosted on <code>https://learninghub.example.com</code>, add CORS to your routes:</p>
+<ul>
+<li>For HTTP API you can configure CORS in console or set <code>Access-Control-Allow-Origin</code> header in integration responses.</li>
+<li>Example allowed origins: <code>https://learninghub.example.com</code> or <code>*</code> for quick demos (not recommended for production).</li>
+</ul>
+<hr>
+<h2 id="9-test-flow-sign-up-sign-in-call-api">9. Test flow (Sign-up, Sign-in, call API)</h2>
+<ol>
+<li>Create a test user in the User Pool (Console -&gt; Users -&gt; Create user) or use self-sign-up if enabled.</li>
+<li>Use Hosted UI or AWS CLI to authenticate and get tokens.</li>
+</ol>
+<p>CLI example (AdminInitiateAuth) to get tokens (PowerShell):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>aws cognito-idp admin-initiate-auth --user-pool-id &lt;USER_POOL_ID&gt; --client-id &lt;CLIENT_ID&gt; --auth-flow ADMIN_NO_SRP_AUTH --auth-parameters USERNAME=<span style="color:#e6db74">&#34;testuser&#34;</span>,PASSWORD=<span style="color:#e6db74">&#34;P@ssw0rd&#34;</span> --output json
+</span></span></code></pre></div><p>Response contains <code>AuthenticationResult.IdToken</code> and <code>AccessToken</code>.</p>
+<ol start="3">
+<li>Call API with bearer token:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$token = <span style="color:#e6db74">&#34;&lt;ID_TOKEN_FROM_AUTH&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>Invoke-RestMethod -Method Get -Uri <span style="color:#e6db74">&#34;https://&lt;api-id&gt;.execute-api.&lt;region&gt;.amazonaws.com/courses&#34;</span> -Headers @{ Authorization = <span style="color:#e6db74">&#34;Bearer </span>$token<span style="color:#e6db74">&#34;</span> }
+</span></span></code></pre></div><p>If you receive 401: check authorizer configuration (issuer/audience), ensure token is not expired and your route has the authorizer attached.</p>
+<hr>
+<h2 id="10-troubleshooting-tips">10. Troubleshooting tips</h2>
+<ul>
+<li>401 Unauthorized: verify <code>Issuer</code> URL exactly matches <code>https://cognito-idp.&lt;region&gt;.amazonaws.com/&lt;USER_POOL_ID&gt;</code> and <code>Audience</code> contains the client id used to get the token.</li>
+<li>403 Forbidden when invoking Lambda: check Lambda resource policy and <code>add-permission</code> invocation.</li>
+<li>Token issues: verify token type (ID token vs Access token) and its claims using jwt.io.</li>
+<li>CORS errors: ensure API returns proper <code>Access-Control-Allow-Origin</code> header.</li>
+</ul>
+<hr>
+<h2 id="11-security-considerations">11. Security considerations</h2>
+<ul>
+<li>Use Authorization Code Grant + PKCE for SPAs to avoid implicit flow security issues.</li>
+<li>Do not embed client secrets in browser apps.</li>
+<li>Scope <code>Resource</code> ARNs in IAM policies in production.</li>
+<li>Set appropriate token expiration and rotation policies.</li>
+</ul>
+<hr>
 
 
 
@@ -1017,6 +1079,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -1027,25 +1091,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1084,7 +1129,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1101,8 +1145,21 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -1367,6 +1424,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1381,6 +1439,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1398,6 +1459,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1412,6 +1474,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1431,6 +1494,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1535,10 +1601,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="http://localhost:1313/aws-report-2HTD-LearningHub/en/1-worklog/1.3-week3/" title="Week 3 Worklog"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="http://localhost:1313/aws-report-2HTD-LearningHub/en/5-workshop/5.3-cognito-api-gateway/" title="Cognito &#43; API Gateway"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="http://localhost:1313/aws-report-2HTD-LearningHub/en/1-worklog/1.5-week5/" title="Week 5 Worklog" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="http://localhost:1313/aws-report-2HTD-LearningHub/en/5-workshop/5.4-lambda-api-gateway/" title="Lambda &#43; API Gateway" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
