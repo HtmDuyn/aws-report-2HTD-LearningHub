@@ -5,18 +5,26 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
 
-### Mục Đích Của Sự Kiện
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+
+### AI-DRIVEN DEVELOPMENT WORKSHOP – SHAPING THE FUTURE OF DEVELOPMENT**
+
+**Địa điểm:** AWS Event Hall, Tầng 26 — Bitexco Tower, TP. Hồ Chí Minh
+
+**Thời gian:** 14:00 – 16:30, Thứ Sáu, 03/10/2025
+
+**Diễn giả:** Toan Huynh, My Nguyen
+
+**Điều phối:** Diem My, Dai Truong, Dinh Nguyen
+
+## Mục tiêu sự kiện
+
+- Chia sẻ xu hướng phát triển phần mềm do AI điều phối (AI-Driven Development).
+- Giới thiệu mô hình AI-Driven Development Lifecycle (AI-DLC) — tích hợp AI xuyên suốt vòng đời phát triển.
+- Demo hai công cụ: Amazon Q Developer và Kiro IDE extension.
+- Phân tích lợi ích AI trong tăng năng suất, tốc độ và chất lượng sản phẩm.
 
 ### Danh Sách Diễn Giả
 
@@ -119,6 +127,5 @@ Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải 
 - Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
 - Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
+
 > Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.

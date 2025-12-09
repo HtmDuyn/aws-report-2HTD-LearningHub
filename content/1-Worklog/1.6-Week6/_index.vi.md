@@ -4,54 +4,35 @@ weight: 1
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
 ### Mục tiêu tuần 6:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu rõ các khái niệm về bảo mật (Security) và tối ưu chi phí (Cost Management) trong AWS.
+* Thực hành cấu hình IAM Policy, KMS, Secrets Manager để bảo mật tài nguyên.
+* Theo dõi, phân tích và cảnh báo chi phí sử dụng qua Billing & Cost Explorer.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Ôn lại kiến thức IAM cơ bản <br> - Tìm hiểu IAM Policy nâng cao (JSON structure, Effect, Action, Resource, Condition) <br> - Tạo custom policy và gán cho user/group            | 13/10/2025   | 13/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 3   | - Giới thiệu AWS Key Management Service (KMS) <br> - Tạo Customer Managed Key (CMK) và test mã hóa/tái giải mã file <br> - Áp dụng KMS vào mã hóa S3 bucket hoặc EBS volume       | 14/10/2025   | 14/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 4   | - Làm quen với AWS Secrets Manager <br> - Tạo secret lưu thông tin kết nối Database <br> - Viết script Lambda nhỏ để đọc secret từ Secrets Manager                             | 15/10/2025   | 15/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 5   | - Khám phá AWS Billing Dashboard và Cost Explorer <br> - Xem chi phí theo dịch vụ, vùng và thời gian <br> - Thiết lập Cost Anomaly Detection                                     | 16/10/2025   | 16/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 6   | - Tạo AWS Budget và cấu hình cảnh báo chi phí qua email <br> - Viết báo cáo tóm tắt chi phí trong tuần và đề xuất tối ưu (tắt EC2, cleanup EBS, giảm log retention, v.v.) <br> - Tổng kết kiến thức tuần 6 | 17/10/2025   | 17/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
 
 
 ### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Nắm vững cách tạo và áp dụng IAM Policy nâng cao để kiểm soát quyền truy cập tài nguyên.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Hiểu rõ cơ chế mã hóa dữ liệu bằng AWS KMS và áp dụng thực tế trên S3, EBS.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Triển khai Secrets Manager để bảo vệ thông tin nhạy cảm, sử dụng được trong Lambda.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Theo dõi chi phí và tạo cảnh báo bằng Cost Explorer và Budgets.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Biết cách phân tích chi phí, đề xuất biện pháp tối ưu và duy trì bảo mật – hiệu quả song song.
+---
 
 

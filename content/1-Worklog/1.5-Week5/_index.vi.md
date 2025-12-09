@@ -4,55 +4,32 @@ weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 5:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Làm quen và thực hành Infrastructure as Code (IaC) với AWS CloudFormation và AWS CDK.
+* Quản lý tài nguyên hệ thống tập trung bằng AWS Systems Manager (SSM).
+* Hiểu cách tự động hóa triển khai và quản trị cơ sở hạ tầng trên AWS.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc                                                                                                                                                                        | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
+| 2   | - Giới thiệu khái niệm Infrastructure as Code (IaC) và lợi ích so với triển khai thủ công <br> - Làm quen với AWS CloudFormation: template, stack, parameter                   | 06/10/2025   | 06/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 3   | - Viết CloudFormation template triển khai S3 bucket và EC2 instance <br> - Tạo, update, và delete stack qua AWS Console                                                         | 07/10/2025   | 07/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 4   | - Giới thiệu AWS CDK (Cloud Development Kit) <br> - Cài đặt AWS CDK, tạo project CDK bằng Python hoặc TypeScript <br> - Viết CDK code để deploy EC2 instance                  | 08/10/2025   | 08/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 5   | - Giới thiệu AWS Systems Manager (SSM) và các tính năng chính: Parameter Store, Run Command, Automation, Session Manager <br> - Tạo Parameter Store lưu biến cấu hình      | 09/10/2025   | 09/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 6   | - Thực hành tạo Automation Document trong SSM để tự động khởi động/tắt EC2 <br> - Kiểm tra Session Manager (truy cập EC2 không cần SSH key) <br> - Tổng kết tuần: IaC + SSM demo  | 10/10/2025   | 10/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
 
 
 ### Kết quả đạt được tuần 5:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Hiểu rõ khái niệm và lợi ích của Infrastructure as Code (IaC) trong quản lý hạ tầng.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Tạo được CloudFormation template triển khai S3 & EC2, quản lý stack thành công.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Làm quen và chạy thử AWS CDK project, deploy tài nguyên qua code.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Biết sử dụng AWS Systems Manager để quản lý cấu hình, chạy lệnh và tự động hóa tác vụ.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
 
 

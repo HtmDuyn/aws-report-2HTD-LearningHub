@@ -4,55 +4,32 @@ weight: 2
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 10:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Làm quen và thực hành với các dịch vụ AI/ML trong hệ sinh thái AWS.
+* Hiểu quy trình huấn luyện, triển khai và sử dụng mô hình Machine Learning.
+* Thực hành sử dụng các dịch vụ SageMaker, Rekognition, Comprehend, và Kendra.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc                                                                                                                                                                        | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
+| 2   | - Giới thiệu tổng quan về AI/ML trên AWS <br> - Tìm hiểu các dịch vụ hỗ trợ ML: SageMaker, Rekognition, Comprehend, Kendra, Translate, Polly                                    | 10/11/2025   | 10/11/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 3   | - Thực hành với Amazon SageMaker: <br> + Tạo Notebook Instance <br> + Huấn luyện mô hình đơn giản (Linear Regression / Image Classification) <br> + Triển khai endpoint và test dự đoán | 11/11/2025   | 11/11/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 4   | - Làm quen với Amazon Rekognition <br> - Demo nhận dạng khuôn mặt và đối tượng trong hình ảnh/video <br> - Tích hợp API Rekognition vào ứng dụng web nhỏ                         | 12/11/2025   | 12/11/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 5   | - Thực hành Amazon Comprehend (phân tích ngôn ngữ tự nhiên) <br> - Thử nghiệm Amazon Kendra (tìm kiếm thông minh theo ngữ cảnh) <br> - So sánh ưu điểm – hạn chế của từng dịch vụ | 13/11/2025   | 13/11/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 6   | - Tổng hợp kiến thức tuần 10: <br> + Quy trình phát triển mô hình AI/ML trên AWS <br> + Ứng dụng thực tế của AI/ML trong doanh nghiệp <br> + Viết báo cáo kết quả thực hành và hướng mở rộng | 14/11/2025   | 14/11/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
 
 
 ### Kết quả đạt được tuần 10:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Hiểu tổng quan hệ sinh thái AI/ML của AWS và các dịch vụ chính.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Thực hành thành công mô hình ML cơ bản trên SageMaker.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Ứng dụng được Rekognition, Comprehend, và Kendra trong các bài toán thực tế.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Nắm vững quy trình huấn luyện – triển khai – tích hợp mô hình AI trên nền tảng AWS.
+---

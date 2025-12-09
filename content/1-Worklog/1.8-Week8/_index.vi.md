@@ -4,55 +4,29 @@ weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 8:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Ôn tập, củng cố các nhóm kiến thức trọng tâm trong AWS Well-Architected Framework: bảo mật, linh hoạt, hiệu năng và tối ưu chi phí.
+* Thành thạo các dịch vụ trọng tâm: EC2, S3, IAM, RDS, VPC, Lambda, CloudWatch, CloudFront.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Tổng quan AWS Well-Architected Framework, 5 trụ cột: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization <br> - Xác định vai trò và tầm quan trọng của từng trụ cột | 27/10/2025   | 27/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 3   | - Ôn tập Thiết kế kiến trúc bảo mật (Secure Architectures) <br> → IAM, MFA, SCP, Encryption (KMS, TLS/ACM), Security Groups, NACLs, GuardDuty, Shield, WAF, Secrets Manager                | 28/10/2025   | 28/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 4   | - Ôn tập Thiết kế kiến trúc linh hoạt và bền vững (Resilient Architectures) <br> → Multi-AZ, Multi-Region, DR Strategies, Auto Scaling, Route 53, Load Balancing, Backup & Restore        | 29/10/2025   | 29/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 5   | - Ôn tập Hiệu năng và tối ưu chi phí (High-Performing & Cost-Optimized Architectures) <br> → EC2 Auto Scaling, Lambda, Fargate, CloudFront, Global Accelerator, Cost Explorer, Budgets, Savings Plans, Storage Tiering | 30/10/2025   | 30/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 6   | - Thực hành tổng hợp: <br> + Xây dựng kiến trúc mẫu kết hợp EC2, S3, RDS, IAM, VPC, CloudFront, Lambda, CloudWatch <br> + Đánh giá theo 5 tiêu chí Well-Architected Framework <br> + Viết báo cáo tổng kết tuần | 31/10/2025   | 31/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
 
 
 ### Kết quả đạt được tuần 8:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Hiểu sâu và hệ thống hóa lại AWS Well-Architected Framework.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Củng cố 4 nhóm kiến trúc trọng tâm: Bảo mật, Linh hoạt, Hiệu năng, Tối ưu chi phí.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Thực hành thiết kế hạ tầng hoàn chỉnh và tự đánh giá theo tiêu chí chuẩn AWS.
+---

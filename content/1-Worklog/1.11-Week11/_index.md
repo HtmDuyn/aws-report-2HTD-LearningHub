@@ -4,53 +4,31 @@ weight: 2
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
 
 ### Week 11 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Learn and practice Modernization & Serverless Architecture on AWS.
+* Build, deploy and manage Serverless applications using Lambda, API Gateway, DynamoDB, Cognito and SAM.
+* Understand how to split a monolith into microservices to improve scalability and maintainability.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task                                                                                                                                                                                               | Start Date | Completion Date | Reference Material                        |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ----------------------------------------- |
+| 2   | - Introduce Modernization and Serverless concepts <br> - Compare monolithic vs microservices architectures <br> - Analyze benefits of moving to serverless                                  | 17/11/2025 | 17/11/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 3   | - Hands-on with AWS Lambda: create functions, configure triggers, view logs in CloudWatch <br> - Implement basic API logic with Lambda                                                       | 18/11/2025 | 18/11/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 4   | - Integrate API Gateway with Lambda to build REST APIs <br> - Connect data with DynamoDB (CRUD operations) <br> - Test APIs using Postman                                                      | 19/11/2025 | 19/11/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 5   | - Configure Cognito for user authentication (user pool, tokens) <br> - Integrate Cognito authentication with API Gateway <br> - Manage access via IAM Roles                                  | 20/11/2025 | 20/11/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 6   | - Deploy the full Serverless application using AWS SAM (Serverless Application Model) <br> - Test, collect logs and optimize performance <br> - Week summary and report                        | 21/11/2025 | 21/11/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
 
 
 ### Week 11 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Understood Serverless Architecture and benefits in cost, performance and scalability.
 
-* Successfully created and configured an AWS Free Tier account.
+* Deployed a complete Serverless app using Lambda, API Gateway, DynamoDB and Cognito.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Learned to use AWS SAM for managing and deploying serverless infrastructure automatically.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Prepared the platform for Week 12 (Final summary & capstone project).
+---

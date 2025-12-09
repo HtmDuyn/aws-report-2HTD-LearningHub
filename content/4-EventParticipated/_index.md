@@ -5,24 +5,35 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-During my internship, I participated in two events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
 
-### [Event 1](4.1-Event1/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
+**Event name:** Vietnam Cloud Day 2025 — Ho Chi Minh City Connect (Builders edition)
 
-&emsp;**Date & Time:** 09:00, August 13, 2025  
+**Time:** Thursday, 18 September 2025, 09:00 – 17:00
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+**Location:** Ho Chi Minh City
 
-&emsp;**Role:** Attendee  
+**Role:** Attendee
+
+**Description:** The event provided a broad perspective on cloud transformation in Vietnam, covering migration, modernization, security, and GenAI-driven development.
+
+**Key highlights:**
+
+- Opening keynote on AWS strategic direction for Vietnam
+- Practical experience sharing from Techcombank and U2U Network
+- Panel session “GenAI Revolution” with industry leaders
+- Migration & Modernization track with real-world case studies of workload moves to AWS
+- Demo of Amazon Q Developer for automating parts of the SDLC
+- Technical session on modernizing VMware workloads to AWS
+
+> The session delivered useful insights for applying cloud modernization and GenAI in real projects, and provided good networking opportunities. 
 
 ---
 
-### [Event 2](4.2-Event2/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
+### [Event 2](4.2-Event2/)
+&emsp;**Event Name:** AI‑Driven Development Workshop – Shaping the Future of Development
 
-&emsp;**Date & Time:** 09:00, August 13, 2025  
+&emsp;**Date & Time:** 14:00 – 16:30, Friday, 03/10/2025
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+&emsp;**Location:** AWS Event Hall, 26th Floor — Bitexco Tower, Ho Chi Minh City
 
-&emsp;**Role:** Attendee  
+&emsp;**Role:** Attendee

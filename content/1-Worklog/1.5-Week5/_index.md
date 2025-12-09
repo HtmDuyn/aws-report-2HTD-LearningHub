@@ -4,53 +4,30 @@ weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 5 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Get hands-on with Infrastructure as Code (IaC) using AWS CloudFormation and AWS CDK.
+* Manage system resources centrally with AWS Systems Manager (SSM).
+* Understand how to automate deployment and operational tasks for AWS infrastructure.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task                                                                                                                                                                                               | Start Date | Completion Date | Reference Material                        |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ----------------------------------------- |
+| 2   | - Introduce Infrastructure as Code (IaC) concepts and benefits vs manual deployment <br> - Get familiar with AWS CloudFormation: template, stack, parameter                                       | 06/10/2025 | 06/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 3   | - Write a CloudFormation template to deploy an S3 bucket and EC2 instance <br> - Create, update, and delete stacks via the AWS Console                                                           | 07/10/2025 | 07/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 4   | - Introduce AWS CDK (Cloud Development Kit) <br> - Install AWS CDK, create a CDK project in Python or TypeScript <br> - Write CDK code to deploy an EC2 instance                              | 08/10/2025 | 08/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 5   | - Introduce AWS Systems Manager (SSM) and core features: Parameter Store, Run Command, Automation, Session Manager <br> - Create Parameter Store entries for configuration variables      | 09/10/2025 | 09/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
+| 6   | - Practice creating an Automation Document in SSM to start/stop EC2 instances <br> - Test Session Manager (access EC2 without SSH keys) <br> - Week summary: IaC + SSM demo                  | 10/10/2025 | 10/10/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/) |
 
 
 ### Week 5 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Understood IaC concepts and benefits for infrastructure management.
 
-* Successfully created and configured an AWS Free Tier account.
+* Created CloudFormation templates to deploy S3 & EC2 and successfully managed stacks.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Got hands-on with AWS CDK and deployed resources using code.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Learned to use AWS Systems Manager to manage configuration, run commands, and automate tasks.
 
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
