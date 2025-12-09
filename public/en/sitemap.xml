@@ -38,18 +38,6 @@
                 href="http://localhost:1313/aws-report-2HTD-LearningHub/en/3-blogstranslated/3.3-blog3/"
                 />
   </url><url>
-    <loc>http://localhost:1313/aws-report-2HTD-LearningHub/en/4-eventparticipated/4.1-event1/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/aws-report-2HTD-LearningHub/vi/4-eventparticipated/4.1-event1/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/aws-report-2HTD-LearningHub/en/4-eventparticipated/4.1-event1/"
-                />
-  </url><url>
     <loc>http://localhost:1313/aws-report-2HTD-LearningHub/en/4-eventparticipated/4.2-event2/</loc>
     <xhtml:link
                 rel="alternate"
@@ -384,6 +372,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/aws-report-2HTD-LearningHub/en/1-worklog/1.2-week2/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/aws-report-2HTD-LearningHub/en/4-eventparticipated/4.1-event1/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/aws-report-2HTD-LearningHub/vi/4-eventparticipated/4.1-event1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/aws-report-2HTD-LearningHub/en/4-eventparticipated/4.1-event1/"
                 />
   </url><url>
     <loc>http://localhost:1313/aws-report-2HTD-LearningHub/en/categories/</loc>
