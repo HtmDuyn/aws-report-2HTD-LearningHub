@@ -4,55 +4,32 @@ weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
-### Mục tiêu tuần 2:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Mục tiêu Tuần 2
 
-### Các công việc cần triển khai trong tuần này:
+* Thực hành hosting website tĩnh trên S3, làm quen RDS (MySQL) và Route53.
+* Kiểm thử kết nối từ EC2 đến RDS và cấu hình Security Group / IAM liên quan.
+
+### Công việc trong tuần
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Tạo S3 bucket để chứa website tĩnh<br>- Upload file HTML/CSS demo lên S3                                                                                                                  | 15/09/2025   | 15/09/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/)                               |
+| 3   | - Kích hoạt Static Website Hosting trên S3<br>- Cấu hình bucket policy cho phép public read cho file tĩnh<br>- Truy cập thử website qua endpoint S3                                           | 16/09/2025   | 16/09/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/)                               |
+| 4   | - Tạo RDS MySQL instance (Free Tier cho lab)<br>- Cấu hình VPC Security Group cho phép kết nối từ subnet/EC2 ứng dụng<br>- Ghi nhận endpoint và credential                                    | 17/09/2025   | 17/09/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/)                               |
+| 5   | - Tạo EC2 instance và cài MySQL client/tools<br>- Từ EC2 kết nối tới RDS bằng mysql client/CLI và tạo database/table kiểm thử                                                           | 18/09/2025   | 18/09/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/)                               |
+| 6   | - Tìm hiểu Route53, tạo Hosted Zone<br>- Thêm record A / CNAME để trỏ domain về S3 static site<br>- Kiểm tra truy cập website bằng domain                                                          | 19/09/2025   | 19/09/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/)                               |
 
 
-### Kết quả đạt được tuần 2:
+### Kết quả đạt được Tuần 2
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Xây dựng thành công website tĩnh trên S3 và kiểm tra truy cập công khai qua endpoint S3.
+* Cấu hình Route53 để trỏ domain về S3 (A/CNAME) và xác minh truy cập bằng domain.
+* Tạo RDS MySQL và kết nối từ EC2; ghi nhận endpoint và thông tin credential phục vụ testing.
+* Nắm được cách cấu hình Security Group và IAM tối thiểu liên quan đến RDS & S3.
+* Gợi ý chủ đề cho Tuần 3: CloudFront, DynamoDB và ElastiCache để mở rộng và tối ưu hiệu năng.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+***
 
 

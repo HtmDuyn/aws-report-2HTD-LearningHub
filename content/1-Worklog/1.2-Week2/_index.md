@@ -1,56 +1,30 @@
----
 title: "Week 2 Worklog"
 weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
----
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
+### Week 2 — Objectives
+
+* Get hands-on with S3 static website hosting, RDS (MySQL) and Route53 basics.
+* Learn how to connect an EC2 client to an RDS instance and configure IAM/Security Groups for DB access.
+
+### Planned tasks this week
+| Day | Task                                                                                                                                                                                                 | Start Date | Completion Date | Reference Material                        |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ----------------------------------------- |
+| 2   | - Create an S3 bucket to host a static website<br>- Upload demo HTML/CSS files to the bucket                                                                                                        | 15/09/2025 | 15/09/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/)                               |
+| 3   | - Enable Static Website Hosting on the S3 bucket<br>- Configure bucket policy to allow public read for site assets<br>- Access the site via the S3 website endpoint                               | 16/09/2025 | 16/09/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/)                               |
+| 4   | - Launch an RDS MySQL instance (Free Tier for lab)<br>- Configure VPC Security Group to allow connections from application subnets/EC2<br>- Record endpoint and credentials                         | 17/09/2025 | 17/09/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/)                               |
+| 5   | - Launch an EC2 instance and install MySQL client/tools<br>- From EC2, connect to the RDS endpoint using CLI/mysql client and create a test database/table                                    | 18/09/2025 | 18/09/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/)                               |
+| 6   | - Learn Route53 basics and create a Hosted Zone<br>- Create A / CNAME records to point a domain to the S3 static site<br>- Verify domain access to the website                                   | 19/09/2025 | 19/09/2025      | [AWS Journey](https://cloudjourney.awsstudygroup.com/)                               |
 
 
-### Week 2 Objectives:
+### Week 2 — Outcomes
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Built and hosted a static website in S3 and verified public access via the S3 endpoint.
+* Configured Route53 to map a domain to the S3 site (A/CNAME) and validated domain access.
+* Created an RDS MySQL instance and connected to it from an EC2 client; recorded endpoint and credentials for testing.
+* Learned to configure Security Groups and minimal IAM roles relevant to RDS and S3.
+* Recommended next topics for Week 3: CloudFront, DynamoDB, and ElastiCache for caching and scale testing.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+***
 
-
-### Week 2 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
