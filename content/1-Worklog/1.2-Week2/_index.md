@@ -1,7 +1,10 @@
+---
 title: "Week 2 Worklog"
 weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
+linktitle: "Week 2 Worklog"
+---
 
 ### Week 2 — Objectives
 

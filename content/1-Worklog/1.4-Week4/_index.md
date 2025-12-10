@@ -36,8 +36,3 @@ pre: " <b> 1.4. </b> "
 * Completed a basic Disaster Recovery plan to prepare for Week 5 (Infrastructure as Code & Systems Manager).
 
 ---
-title: "Week 4 Worklog"
-weight: 1
-chapter: false
-pre: " <b> 1.4. </b> "
----
