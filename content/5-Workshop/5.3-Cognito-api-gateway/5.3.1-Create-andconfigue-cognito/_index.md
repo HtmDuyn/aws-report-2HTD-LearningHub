@@ -2,6 +2,7 @@
 title: "Create and configure Cognito & API Gateway"
 weight: 2
 chapter: false
+pre: " <b> 5.3.1. </b> "
 
 ---
 

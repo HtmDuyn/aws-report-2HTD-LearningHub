@@ -11,7 +11,7 @@ chapter: false
 
 &emsp; **Số điện thoại:** 0962866302
 
-&emsp; **Email:** duyenhtmse180688
+&emsp; **Email:** duyenhtmse180688@fpt.edu.vn
 
 &emsp; **Trường:** Đại học FPT TP.Hồ Chí Minh
 
